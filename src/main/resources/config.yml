@@ -1,0 +1,68 @@
+#  █████╗ ██████╗ ███████╗███╗   ██╗ █████╗ ██████╗ ██╗   ██╗██████╗
+# ██╔══██╗██╔══██╗██╔════╝████╗  ██║██╔══██╗██╔══██╗██║   ██║██╔══██╗
+# ███████║██████╔╝█████╗  ██╔██╗ ██║███████║██████╔╝██║   ██║██████╔╝
+# ██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║██╔══██║██╔═══╝ ╚██╗ ██╔╝██╔═══╝
+# ██║  ██║██║  ██║███████╗██║ ╚████║██║  ██║██║      ╚████╔╝ ██║
+# ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝       ╚═══╝  ╚═╝
+#
+# ██╗      ██████╗ ██████╗ ██████╗         ██████╗  █████╗ ██████╗ ███████╗
+# ██║     ██╔═══██╗██╔══██╗██╔══██╗        ██╔══██╗██╔══██╗██╔══██╗╚══███╔╝
+# ██║     ██║   ██║██████╔╝██║  ██║        ██║  ██║███████║██████╔╝  ███╔╝
+# ██║     ██║   ██║██╔══██╗██║  ██║        ██║  ██║██╔══██║██╔══██╗ ███╔╝
+# ███████╗╚██████╔╝██║  ██║██████╔╝███████╗██████╔╝██║  ██║██║  ██║███████╗
+# ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+#
+# PLEASE SUPPORT RATING PLUGIN REPOSITORY: https://github.com/Vefixy/arenapvp
+
+settings:
+  prefix-enabled: true
+  debug: false
+
+arena:
+  enabled: true
+  default-world-fallback: world
+  gui-title: "&c&lArena Warps"
+  gui-rows: 3
+
+kits:
+  enabled: true
+  mode: both
+  essentials-prefix: ""
+  gui-title: "&c&lArena Kits"
+  gui-rows: 3
+
+economy:
+  enabled: true
+  kill-reward: 50.0
+  death-penalty: 25.0
+  minimum-balance: 0.0
+
+ranked:
+  enabled: true
+  tiers:
+    iron: [10, 25, 50]
+    gold: [75, 100, 150]
+    diamond: [200, 275, 350]
+    netherite: [500, 650, 800]
+
+stats:
+  enabled: true
+  track-kills: true
+  track-deaths: true
+  track-streaks: true
+  reset-streak-on-death: true
+
+placeholders:
+  enabled: true
+  top-streak-size: 10
+
+updates:
+  enabled: true
+  github-owner: Vefixy
+  github-repo: arenapvp
+  check-on-startup: true
+  notify-ops-on-join: true
+  recheck-interval-minutes: 60
+
+database:
+  filename: arenapvp.db

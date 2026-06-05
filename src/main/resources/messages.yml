@@ -1,0 +1,59 @@
+prefix: "&c&lARENA&4&lPVP &8» &r"
+
+general:
+  no-permission: "{prefix}&cYou do not have permission."
+  player-only: "{prefix}&cThis command can only be used by players."
+  reload-success: "{prefix}&aConfiguration reloaded successfully."
+  unknown-subcommand: "{prefix}&cUnknown subcommand. Use &e/arenapvp help&c."
+
+arena:
+  set-success: "{prefix}&aArena &e{arena} &aset at &e{world} &7({x}, {y}, {z})&a."
+  warp-success: "{prefix}&aTeleported to arena &e{arena}&a."
+  warp-not-set: "{prefix}&cNo arenas have been set yet."
+  warp-disabled: "{prefix}&cArena warp is disabled."
+  world-not-found: "{prefix}&cArena world &e{world} &cis not loaded. Check Multiverse-Core."
+  not-found: "{prefix}&cArena &e{arena} &cnot found."
+  gui-opened: "{prefix}&aOpening arena warps menu..."
+
+kits:
+  disabled: "{prefix}&cKits are disabled."
+  gui-opened: "{prefix}&aOpening kits menu..."
+  kit-received: "{prefix}&aYou received kit &e{kit}&a."
+  kit-not-found: "{prefix}&cKit &e{kit} &cnot found."
+  kit-created: "{prefix}&aLocal kit &e{kit} &acreated from your inventory."
+  kit-deleted: "{prefix}&aLocal kit &e{kit} &adeleted."
+  essentials-unavailable: "{prefix}&cEssentials is not installed. Using local kits only."
+
+stats:
+  disabled: "{prefix}&cStats tracking is disabled."
+  player-not-found: "{prefix}&cPlayer &e{player} &cis not online."
+  self: "{prefix}&7Kills: &a{kills} &7| Deaths: &c{deaths} &7| KDR: &e{kdr} &7| Streak: &6{streak} &7| Rank: &b{rank}"
+  other: "{prefix}&e{player}&7 — Kills: &a{kills} &7| Deaths: &c{deaths} &7| KDR: &e{kdr} &7| Streak: &6{streak} &7| Rank: &b{rank}"
+
+economy:
+  kill-reward: "{prefix}&a+&2${amount} &7for eliminating &e{victim}&7."
+  death-penalty: "{prefix}&c-${amount} &7for dying to &e{killer}&7."
+  disabled: "{prefix}&7Economy rewards are disabled."
+
+pvp:
+  kill-broadcast: "{prefix}&e{killer} &7eliminated &c{victim} &7[&6{streak} streak&7]"
+  rank-up: "{prefix}&aYou ranked up to &b{rank}&a!"
+
+updates:
+  checking: "{prefix}&7Checking for updates..."
+  up-to-date: "{prefix}&aYou are running the latest version (&ev{version}&a)."
+  available: "{prefix}&eA new version is available: &a{latest} &7(current: &c{current}&7). Download: &b{url}"
+  failed: "{prefix}&cCould not check for updates. See console for details."
+  console-up-to-date: "[ArenaPVP] Running latest version v{version}."
+  console-available: "[ArenaPVP] Update available: v{latest} (current v{current}) — {url}"
+
+help:
+  - "{prefix}&c&lArenaPVP Commands"
+  - "&e/arenapvp warp [arena] &7- GUI or warp to arena"
+  - "&e/arenapvp setarena <name> &7- Set arena location (admin)"
+  - "&e/arenapvp kit [name] &7- GUI or receive kit directly"
+  - "&e/arenapvp stats [player] &7- View PVP stats"
+  - "&e/arenapvp reload &7- Reload config (admin)"
+  - "&e/arenapvp update &7- Check for updates (admin)"
+  - "&e/arenapvp kit create <name> &7- Save local kit (admin)"
+  - "&e/arenapvp kit delete <name> &7- Delete local kit (admin)"

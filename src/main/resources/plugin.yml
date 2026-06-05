@@ -1,0 +1,64 @@
+name: ArenaPVP
+version: '${version}'
+main: com.arenapvp.ArenaPVPPlugin
+api-version: '1.21'
+author: Vefixy
+description: PVP arena plugin with kits, ranked system, economy and stats
+website: https://github.com/Vefixy/arenapvp
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - Essentials
+  - Multiverse-Core
+  - LuckPerms
+
+permissions:
+  arenapvp.*:
+    description: All ArenaPVP permissions
+    default: op
+    children:
+      arenapvp.help: true
+      arenapvp.warp: true
+      arenapvp.setarena: true
+      arenapvp.kit: true
+      arenapvp.kit.create: true
+      arenapvp.kit.delete: true
+      arenapvp.stats: true
+      arenapvp.stats.others: true
+      arenapvp.reload: true
+      arenapvp.update: true
+      arenapvp.update.notify: true
+  arenapvp.help:
+    description: View ArenaPVP help
+    default: true
+  arenapvp.warp:
+    description: Warp to arenas (GUI or direct)
+    default: true
+  arenapvp.setarena:
+    description: Create or update arena locations
+    default: op
+  arenapvp.kit:
+    description: Open kits GUI or receive kits
+    default: true
+  arenapvp.kit.create:
+    description: Create local kits
+    default: op
+  arenapvp.kit.delete:
+    description: Delete local kits
+    default: op
+  arenapvp.stats:
+    description: View your own PVP stats
+    default: true
+  arenapvp.stats.others:
+    description: View other players' PVP stats
+    default: op
+  arenapvp.reload:
+    description: Reload ArenaPVP configuration
+    default: op
+  arenapvp.update:
+    description: Check for plugin updates
+    default: op
+  arenapvp.update.notify:
+    description: Receive update notifications on join
+    default: op
