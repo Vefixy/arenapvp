@@ -24,7 +24,10 @@ public final class CombatListener implements Listener {
 
         if (killer != null && !killer.equals(victim)) {
             plugin.stats().handleKill(killer.getUniqueId(), killer.getName(), victim.getUniqueId(), victim.getName());
-            plugin.economy().rewardKill(killer, victim);
+            double reward = plugin.economy().rewardKill(killer, victim);
+            if (reward > 0) {
+                plugin.actionBar().showKillReward(killer, reward, victim.getName());
+            }
             plugin.economy().penalizeDeath(victim, killer);
             if (plugin.pluginConfig().isTrackStreaks()) {
                 var stats = plugin.stats().getOrCreate(killer.getUniqueId(), killer.getName());

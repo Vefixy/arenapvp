@@ -34,7 +34,13 @@ public final class PluginConfig {
     private boolean trackStreaks;
     private boolean resetStreakOnDeath;
     private boolean placeholdersEnabled;
-    private int topStreakSize;
+    private int topListSize;
+    private boolean actionBarEnabled;
+    private List<String> actionBarWorlds;
+    private int actionBarUpdateIntervalTicks;
+    private int actionBarKillRewardSeconds;
+    private String actionBarPermission;
+    private boolean economyChatOnKill;
     private boolean updatesEnabled;
     private String githubOwner;
     private String githubRepo;
@@ -75,7 +81,13 @@ public final class PluginConfig {
         trackStreaks = cfg.getBoolean("stats.track-streaks", true);
         resetStreakOnDeath = cfg.getBoolean("stats.reset-streak-on-death", true);
         placeholdersEnabled = cfg.getBoolean("placeholders.enabled", true);
-        topStreakSize = cfg.getInt("placeholders.top-streak-size", 10);
+        topListSize = cfg.getInt("placeholders.top-list-size", cfg.getInt("placeholders.top-streak-size", 10));
+        actionBarEnabled = cfg.getBoolean("action-bar.enabled", true);
+        actionBarWorlds = cfg.getStringList("action-bar.worlds");
+        actionBarUpdateIntervalTicks = cfg.getInt("action-bar.update-interval-ticks", 20);
+        actionBarKillRewardSeconds = cfg.getInt("action-bar.kill-reward-display-seconds", 4);
+        actionBarPermission = cfg.getString("action-bar.permission", "arenapvp.actionbar");
+        economyChatOnKill = cfg.getBoolean("economy.chat-message-on-kill", false);
         updatesEnabled = cfg.getBoolean("updates.enabled", true);
         githubOwner = cfg.getString("updates.github-owner", "Vefixy");
         githubRepo = cfg.getString("updates.github-repo", "arenapvp");
@@ -119,7 +131,13 @@ public final class PluginConfig {
     public boolean isTrackStreaks() { return trackStreaks; }
     public boolean isResetStreakOnDeath() { return resetStreakOnDeath; }
     public boolean isPlaceholdersEnabled() { return placeholdersEnabled; }
-    public int getTopStreakSize() { return topStreakSize; }
+    public int getTopListSize() { return topListSize; }
+    public boolean isActionBarEnabled() { return actionBarEnabled; }
+    public List<String> getActionBarWorlds() { return actionBarWorlds; }
+    public int getActionBarUpdateIntervalTicks() { return actionBarUpdateIntervalTicks; }
+    public int getActionBarKillRewardSeconds() { return actionBarKillRewardSeconds; }
+    public String getActionBarPermission() { return actionBarPermission; }
+    public boolean isEconomyChatOnKill() { return economyChatOnKill; }
     public boolean isUpdatesEnabled() { return updatesEnabled; }
     public String getGithubOwner() { return githubOwner; }
     public String getGithubRepo() { return githubRepo; }

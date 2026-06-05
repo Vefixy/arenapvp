@@ -31,9 +31,14 @@ stats:
   other: "{prefix}&e{player}&7 — Kills: &a{kills} &7| Deaths: &c{deaths} &7| KDR: &e{kdr} &7| Streak: &6{streak} &7| Rank: &b{rank}"
 
 economy:
-  kill-reward: "{prefix}&a+&2${amount} &7for eliminating &e{victim}&7."
+  kill-reward: "{prefix}&a+&2${amount} &7por eliminar a &e{victim}&7."
   death-penalty: "{prefix}&c-${amount} &7for dying to &e{killer}&7."
   disabled: "{prefix}&7Economy rewards are disabled."
+
+action-bar:
+  stats: "&7Kills: &a{kills} &7| Deaths: &c{deaths} &7| KDR: &e{kdr} &7| Streak: &6{streak} &7| Rank: &b{rank}"
+  kill-reward: "&a+&2${amount} &7por eliminar a &e{victim}"
+  combined: "{reward} &8| {stats}"
 
 pvp:
   kill-broadcast: "{prefix}&e{killer} &7eliminated &c{victim} &7[&6{streak} streak&7]"

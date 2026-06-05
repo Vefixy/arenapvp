@@ -2,6 +2,7 @@ package com.arenapvp;
 
 import com.arenapvp.command.ArenaCommand;
 import com.arenapvp.config.PluginConfig;
+import com.arenapvp.display.ActionBarService;
 import com.arenapvp.hook.EconomyHook;
 import com.arenapvp.hook.EssentialsHook;
 import com.arenapvp.hook.PlaceholderHook;
@@ -28,6 +29,7 @@ public final class ArenaPVPPlugin extends JavaPlugin {
     private EconomyHook economyHook;
     private EssentialsHook essentialsHook;
     private PlaceholderHook placeholderHook;
+    private ActionBarService actionBarService;
     private UpdateChecker updateChecker;
 
     @Override
@@ -49,6 +51,8 @@ public final class ArenaPVPPlugin extends JavaPlugin {
         essentialsHook = new EssentialsHook(this);
         placeholderHook = new PlaceholderHook(this);
         placeholderHook.register();
+        actionBarService = new ActionBarService(this);
+        actionBarService.start();
 
         updateChecker = new UpdateChecker(this);
         if (pluginConfig.isUpdateCheckOnStartup()) {
@@ -66,6 +70,9 @@ public final class ArenaPVPPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        if (actionBarService != null) {
+            actionBarService.stop();
+        }
         if (placeholderHook != null) {
             placeholderHook.unregister();
         }
@@ -84,6 +91,7 @@ public final class ArenaPVPPlugin extends JavaPlugin {
         economyHook.setup();
         essentialsHook.reload();
         placeholderHook.register();
+        actionBarService.reload();
         updateChecker.resetCache();
     }
 
@@ -121,5 +129,9 @@ public final class ArenaPVPPlugin extends JavaPlugin {
 
     public UpdateChecker updates() {
         return updateChecker;
+    }
+
+    public ActionBarService actionBar() {
+        return actionBarService;
     }
 }

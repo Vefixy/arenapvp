@@ -30,19 +30,22 @@ public final class EconomyHook {
         return economy != null;
     }
 
-    public void rewardKill(Player killer, Player victim) {
+    public double rewardKill(Player killer, Player victim) {
         if (!plugin.pluginConfig().isEconomyEnabled() || !isAvailable()) {
-            return;
+            return 0;
         }
         double reward = plugin.pluginConfig().getKillReward();
         if (reward <= 0) {
-            return;
+            return 0;
         }
         economy.depositPlayer(killer, reward);
-        plugin.messages().send(killer, "economy.kill-reward", Map.of(
-                "amount", format(reward),
-                "victim", victim.getName()
-        ));
+        if (plugin.pluginConfig().isEconomyChatOnKill()) {
+            plugin.messages().send(killer, "economy.kill-reward", Map.of(
+                    "amount", format(reward),
+                    "victim", victim.getName()
+            ));
+        }
+        return reward;
     }
 
     public void penalizeDeath(Player victim, Player killer) {

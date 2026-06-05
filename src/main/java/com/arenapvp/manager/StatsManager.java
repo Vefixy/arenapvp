@@ -95,9 +95,22 @@ public final class StatsManager {
     }
 
     public List<PlayerStats> topStreaks(int limit) {
+        return queryTop("best_streak DESC", limit);
+    }
+
+    public List<PlayerStats> topKills(int limit) {
+        return queryTop("kills DESC", limit);
+    }
+
+    public List<PlayerStats> topDeaths(int limit) {
+        return queryTop("deaths DESC", limit);
+    }
+
+    private List<PlayerStats> queryTop(String orderBy, int limit) {
         List<PlayerStats> result = new ArrayList<>();
         try (PreparedStatement ps = database.connection().prepareStatement(
-                "SELECT uuid, name, kills, deaths, current_streak, best_streak FROM player_stats ORDER BY best_streak DESC LIMIT ?")) {
+                "SELECT uuid, name, kills, deaths, current_streak, best_streak FROM player_stats ORDER BY "
+                        + orderBy + " LIMIT ?")) {
             ps.setInt(1, limit);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
@@ -112,7 +125,7 @@ public final class StatsManager {
                 }
             }
         } catch (SQLException ex) {
-            plugin.getLogger().log(Level.WARNING, "Failed to load top streaks", ex);
+            plugin.getLogger().log(Level.WARNING, "Failed to load top stats ordered by " + orderBy, ex);
         }
         return result;
     }

@@ -33,9 +33,10 @@ kits:
 
 economy:
   enabled: true
-  kill-reward: 50.0
-  death-penalty: 25.0
+  kill-reward: 25.0
+  death-penalty: 0.0
   minimum-balance: 0.0
+  chat-message-on-kill: false
 
 ranked:
   enabled: true
@@ -54,7 +55,15 @@ stats:
 
 placeholders:
   enabled: true
-  top-streak-size: 10
+  top-list-size: 10
+
+action-bar:
+  enabled: true
+  worlds:
+    - ArenaWorld
+  update-interval-ticks: 20
+  kill-reward-display-seconds: 4
+  permission: arenapvp.actionbar
 
 updates:
   enabled: true

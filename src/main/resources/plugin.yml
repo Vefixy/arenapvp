@@ -29,6 +29,7 @@ permissions:
       arenapvp.reload: true
       arenapvp.update: true
       arenapvp.update.notify: true
+      arenapvp.actionbar: true
   arenapvp.help:
     description: View ArenaPVP help
     default: true
@@ -62,3 +63,6 @@ permissions:
   arenapvp.update.notify:
     description: Receive update notifications on join
     default: op
+  arenapvp.actionbar:
+    description: Show persistent PVP stats on the action bar
+    default: true
