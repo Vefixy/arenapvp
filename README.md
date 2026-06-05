@@ -35,7 +35,7 @@ Works with Paper **26.1.2** (Minecraft 26.1.2). Requires **Java 25** on the serv
 
 ### PlaceholderAPI
 - `%arenapvp_kills%`, `%arenapvp_deaths%`, `%arenapvp_kdr%`
-- `%arenapvp_streak%`, `%arenapvp_best_streak%`, `%arenapvp_rank%`
+- `%arenapvp_streak%`, `%arenapvp_best_streak%`, `%arenapvp_rank%` / `%arenapvp_rango%` (e.g. `Iron 1`)
 - `%arenapvp_top_kills_<position>_name%` / `_val%`
 - `%arenapvp_top_deaths_<position>_name%` / `_val%`
 - `%arenapvp_top_streak_<position>_name%` / `_val%` / `_kills%`
