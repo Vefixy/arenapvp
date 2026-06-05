@@ -116,5 +116,6 @@ Run Gradle with Java 21–24; the project toolchain targets Java 25 for Paper 26
 
 ## Links
 
-- Repository: https://github.com/Vefixy/arenapvp
+- SpigotMC: https://www.spigotmc.org/resources/arenapvp-frenetic-pvp-system.135890/
 - Issues & releases: same repo
+- Donation Link: https://vefixy.com
