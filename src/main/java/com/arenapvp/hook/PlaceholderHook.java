@@ -74,7 +74,7 @@ public final class PlaceholderHook {
                     case "kdr" -> String.valueOf(RankCalculator.kdr(stats.kills(), stats.deaths()));
                     case "streak" -> String.valueOf(stats.currentStreak());
                     case "best_streak" -> String.valueOf(stats.bestStreak());
-                    case "rank", "rango" -> plugin.stats().rankFor(stats).displayName();
+                    case "rank" -> plugin.stats().rankFor(stats).displayName();
                     default -> resolveTopPlaceholder(params);
                 };
             }
